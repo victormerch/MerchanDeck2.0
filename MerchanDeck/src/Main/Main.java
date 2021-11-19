@@ -81,8 +81,13 @@ class Botones extends JButton{
 
 	public Botones(URL foto,java.net.URI pagina){
 		
-       
-		ImageIcon dukesIcon = new ImageIcon(foto); 
+		
+		Toolkit mipantalla = Toolkit.getDefaultToolkit();
+		Image miicono = mipantalla.getImage(foto);
+		Image dimg = miicono.getScaledInstance(100, 150, Image.SCALE_SMOOTH);
+		ImageIcon dukesIcon = new ImageIcon(dimg);
+		
+	
 		setIcon(dukesIcon);
 		addActionListener(new ActionListener() {
 			
